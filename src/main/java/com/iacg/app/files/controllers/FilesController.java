@@ -5,10 +5,7 @@ import com.iacg.app.files.services.IFileOption2Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -38,12 +35,12 @@ public class FilesController {
     }
 
     @PostMapping("/option-2")
-    public ResponseEntity<?> saveFilesOption2(@RequestParam("files") List<MultipartFile> files){
+    public ResponseEntity<?> saveFilesOption2(@RequestParam("files") List<MultipartFile> files, @RequestParam("archivosDto") String archivosDto){
         if(files.isEmpty()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Seleccionar archivos");
         }
         try{
-            fileOption2Service.save(files);
+            fileOption2Service.save(files,archivosDto);
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage() + "ERROR: " + e.toString());
         }
