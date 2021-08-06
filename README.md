@@ -11,7 +11,7 @@ Tipo: Request Param
     file : MultipartFile
 
 ### Endpoint POST /option-2 
-Permite guardar una lista archivos junto con un JSON (arreglo) metadatos de los archivos. Una vez que se envia el JSON de metados, se deserializa a la clase ArchivoDto, creando una lista del mismo tamanio de los archivos enviados. 
+Permite guardar una lista de archivos junto con un JSON (arreglo) de metadatos de los archivos. Una vez que se envia el JSON de metados, se deserializa a la clase ArchivoDto, creando una lista del mismo tamanio de los archivos enviados. 
 #### Estructura del JSON archivosDto
 ```
     [ 
@@ -25,7 +25,7 @@ Permite guardar una lista archivos junto con un JSON (arreglo) metadatos de los 
 #### Argumentos 
 Tipo: Request Param
 ```
-    files : List<MiltipartFile>
+    files : List<MultipartFile>
 ```
 Tipo: Request Param
 ```
