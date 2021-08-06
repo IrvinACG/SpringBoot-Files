@@ -1,5 +1,5 @@
 # SpringBoot-Files
-Esta API envia archivos y datos JSON para guardarlos en local
+Esta API envia archivos y datos JSON para guardarlos en la carpeta local "files" (NO BORRAR CARPETA)
 
 ## API /files/v1/files
 
